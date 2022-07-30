@@ -31,5 +31,7 @@
     "help_embed_description": "Vous trouverez des tutoriels pour utiliser RaidProtect dans notre **[centre d'aide](https://docs.raidprotect.org/)**. Vous pouvez également rejoindre notre **[serveur Discord](https://raidpro.tk/discord)** et poser vos questions à notre équipe.",
     "help_support": "Notre serveur Discord",
     "help_bot_invite": "Ajouter à mon serveur",
-    "help_description": "Besoin d'aide pour utiliser RaidProtect?"
+    "help_description": "Besoin d'aide pour utiliser RaidProtect?",
+    "warning_deprecated_command_title": "Oups !",
+    "warning_deprecated_command_description": "Il semble que tu aies essayé de me dire quelque chose. Mais je ne comprend pas :(\n\nUtilise les nouvelles commandes slash à la place.\nUtilise `/help` pour voir les commandes disponibles."
 }
