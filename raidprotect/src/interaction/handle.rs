@@ -14,7 +14,9 @@ use twilight_model::{
 };
 
 use super::{
-    command::{help::HelpCommand, moderation::KickCommand, profile::ProfileCommand},
+    command::{
+        config::ConfigCommand, help::HelpCommand, moderation::KickCommand, profile::ProfileCommand,
+    },
     component::PostInChat,
     embed,
     response::{InteractionResponder, InteractionResponse},
@@ -64,9 +66,10 @@ async fn handle_command(
 
     let lang = interaction.locale()?;
     match name {
-        "profile" => ProfileCommand::handle(interaction, state).await,
-        "kick" => KickCommand::handle(interaction, state).await,
+        "config" => ConfigCommand::handle(interaction, state).await,
         "help" => HelpCommand::handle(interaction, state).await,
+        "kick" => KickCommand::handle(interaction, state).await,
+        "profile" => ProfileCommand::handle(interaction, state).await,
         name => {
             warn!(name = name, "received unknown command");
 
@@ -132,9 +135,10 @@ async fn handle_modal(
 /// Register commands to the Discord API.
 pub async fn register_commands(state: &ClusterState, application_id: Id<ApplicationMarker>) {
     let commands: Vec<Command> = vec![
-        ProfileCommand::create_command().into(),
-        KickCommand::create_command().into(),
+        ConfigCommand::create_command().into(),
         HelpCommand::create_command().into(),
+        KickCommand::create_command().into(),
+        ProfileCommand::create_command().into(),
     ];
 
     let client = state.http().interaction(application_id);

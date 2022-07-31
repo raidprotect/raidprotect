@@ -1,4 +1,5 @@
 //! Utility function to handle incoming interactions.
+
 use std::mem;
 
 use anyhow::{bail, Context};
